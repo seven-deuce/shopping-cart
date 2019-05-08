@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="/public/css/style.css">
+	<style type="text/css">
+
+	</style>
+	<title>JavaScript BookStore</title>
+</head>
+
+<body>
+	<a href="/checkout" id="cart"><img src="/public/img/cart.png"><span id="count" ></span></a>
+	<div id="page" class="product">
+
+		<% if(feed){  %>
+		<div >
+			<img src="/public/img/<%- feed.img%>.jpg">
+
+			<div>
+				<h1 href="/<%- feed._id%>"><%- feed.name%></h1>
+				<h2>By: <%- feed.writer%></h2>
+				<p><b>Price: </b>$<%- feed.price%></p>
+				<p><%- feed.desc%></p>
+				<button class="add" id="<%- feed._id%>">Order Now!</button>
+
+			</div>
+
+		</div>
+		<%  } %>
+	</div>
+
+
+
+	<script type="text/javascript" src="/public/js/script.js"></script>
+</body>
+
+</html>

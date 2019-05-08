@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="public/css/style.css">
+	<style type="text/css">
+
+	</style>
+	<title>JavaScript BookStore</title>
+</head>
+
+<body>
+
+	<div id="page">
+
+		<h1>Shopping Cart</h1>
+		<h3>You have <%-(totalCount) ? totalCount + " items" : "no item"%> in your basket!</h3>
+		<div id="list">
+				<% if(arr.length) { %>
+			<table class="titles" >
+
+				<tr>
+					<th>Picture</th>
+					<th>Title</th> 
+					<th>Price</th>
+					<th>Quantity</th>
+
+				</tr>
+				<% if(arr.length){ arr.forEach(item=> { %>
+				<tr >
+					<td><img src="public/img/<%- item.img%>.jpg"></td>
+					<td><a href="/product/<%- item._id%>"><%- item.name%></a></td>
+					<td><%- item.price%></td>
+					<td><%- item.quantity%></td>
+					
+				</tr>
+			<% }) } %>
+
+			</table>
+<% } %>
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript" src="/public/js/script.js"></script>
+</body>
+
+</html>

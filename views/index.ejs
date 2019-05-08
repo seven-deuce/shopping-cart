@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="public/css/style.css">
+	<style type="text/css">
+
+	</style>
+	<title>JavaScript BookStore</title>
+</head>
+
+<body>
+	<a href="/checkout" id="cart"><img src="/public/img/cart.png"><span id="count" ></span></a>
+	<div id="page">
+
+		<h1>Ask us for the best books on JavaScript!</h1>
+		<div id="list">
+
+			<table class="titles" >
+				<tr>
+					<th>Picture</th>
+					<th>Title</th> 
+					<th>Price</th>
+
+				</tr>
+				<% if(feed.length){ feed.forEach(item=> { %>
+				<tr >
+					<td><img src="public/img/<%- item.img%>.jpg"></td>
+					<td><a href="/product/<%- item._id%>"><%- item.name%></a></td>
+					<td>$<%- item.price%></td>
+					<td><button class="add" id="<%- item._id%>">Order Now!</button></td>
+
+
+				</tr>
+				<% }) } %>
+
+			</table>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/public/js/script.js"></script>
+</body>
+
+</html>
